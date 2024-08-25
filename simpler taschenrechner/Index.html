@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+   <link rel="stylesheet" href="style.css">
+   
+   
+  <script>
+
+    function appendoperation(operation){
+        document.getElementById("resultArea").innerHTML += operation;
+    }
+    function CalculateResult() {
+        let container=document.getElementById("resultArea")
+        let result = eval(container.innerHTML)
+        container.innerHTML = result;
+    }
+    function deletelast(){
+        let container=document.getElementById("resultArea")
+        container.innerHTML = container.innerHTML.slice(0,-1)  
+    }
+    
+   
+            
+                
+            
+  </script>
+</head>
+
+<body>
+  <div id="resultArea">
+  </div>
+</body>
+
+<table>
+    <tr>
+        <td onclick="deletelast()">del</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+     <td onclick="appendoperation(7)">7</td>
+     <td onclick="appendoperation(8)">8</td>
+     <td onclick="appendoperation(9)">9</td>
+     <td onclick="appendoperation('/')" class="highlight">/</td>
+    </tr>
+
+    <TR>
+        <TD onclick="appendoperation(4)">4</TD>
+        <TD onclick="appendoperation(5)">5</TD> 
+        <TD onclick="appendoperation(6)">6</TD>
+        <TD onclick="appendoperation( '* ')" class="highlight">x</TD>
+    </TR>
+
+    <tr>
+        <td onclick="appendoperation(1)">1</td>
+        <td onclick="appendoperation(2)">2</td>
+        <td onclick="appendoperation(3)">3</td>
+        <td onclick="appendoperation( '+ ')" class="highlight">+</td>
+    </tr>
+
+    <tr>
+        <td onclick="appendoperation(0)">0</td>
+        <td onclick="appendoperation( '. ')">,</td>
+        <td onclick="CalculateResult()"id="result">=</td>
+        <td onclick="appendoperation( '- ')" class="highlight">-</td>
+    </tr>
+</table>
+<html>
